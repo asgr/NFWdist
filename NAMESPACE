@@ -1,0 +1,2 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("gsl", "lambert_W0")
