@@ -59,6 +59,20 @@ This seems to work at least as efficiently as accept reject, but it is ultimatel
 Nothing to see here!
 }
 \examples{
+#Both the PDF (dnfw) integrated up to x, and CDF at q should be the same:
+
+for(con in c(1,5,10,20)){
+  print(integrate(dnfw, lower=0, upper=0.5, con=con)$value)
+  print(pnfw(0.5, con=con))
+}
+
+#The qnfw should invert the pnfw, returning the input vector (1:9)/10:
+for(con in c(1,5,10,20)){
+  print(qnfw(p=pnfw(q=(1:9)/10,con=con), con=con))
+}
+
+#The sampling from rnfw should recreate the expected PDF from dnfw:
+
 for(con in c(1,5,10,20)){
   plot(density(rnfw(1e6,con=con), bw=0.01))
   lines(seq(0,1,len=1e3), dnfw(seq(0,1,len=1e3),con=con),col='red')

@@ -1,5 +1,5 @@
 .pnfwunorm=function(q, con=5){
-  return(log((1/con+q)*con)-q/(1/con+q))
+  return(log(1 + q*con)-(con*q)/(1 + con*q))
 }
 
 dnfw = function(x, con=5, log=FALSE){
