@@ -24,7 +24,6 @@ pnfw = function(q, con=5, log.p=FALSE){
 qnfw = function(p, con=5, log.p=FALSE){
   if(log.p){p=exp(p)}
   p=p*.pnfwunorm(q=1, con=con)
-  #return((exp(lambert_W0(-exp(-p-1))+p+1)-1)/con)
   return((-(1/lambert_W0(-exp(-p-1)))-1)/con)
 }
 
