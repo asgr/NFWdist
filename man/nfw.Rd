@@ -1,4 +1,7 @@
 \name{nfw}
+\alias{NFW}
+\alias{NFWdist}
+\alias{nfw}
 \alias{dnfw}
 \alias{pnfw}
 \alias{qnfw}
@@ -35,7 +38,7 @@ Logical; if TRUE, probabilities/densities p are returned as log(p).
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The novel part of this package is the general solution for the CDF inversion (i.e. qnfw). As far as I can see this has not been published anywhere, and it is a useful function for populating halos in something like an HOD.
 }
 \value{
 dnfw gives the density, pnfw gives the distribution function, qnfw gives the quantile function, and rnfw generates random deviates.
@@ -44,10 +47,10 @@ dnfw gives the density, pnfw gives the distribution function, qnfw gives the qua
 None as of yet!
 }
 \author{
- Aaron Robotham
+Aaron Robotham
 }
 \note{
-This seems to work at least as efficiently as accept reject, but it is ultimately much more elegant code.
+This seems to work at least as efficiently as accept reject, but it is ultimately much more elegant code in any case.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -57,7 +60,7 @@ Nothing to see here!
 }
 \examples{
 for(con in c(1,5,10,20)){
-  magplot(density(rnfw(1e6,con=con), bw=0.01))
+  plot(density(rnfw(1e6,con=con), bw=0.01))
   lines(seq(0,1,len=1e3), dnfw(seq(0,1,len=1e3),con=con),col='red')
   legend('topright',legend=paste('con =',con))
 }

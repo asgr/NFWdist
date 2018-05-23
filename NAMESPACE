@@ -1,2 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+
+importFrom("stats", "runif")
 importFrom("gsl", "lambert_W0")
