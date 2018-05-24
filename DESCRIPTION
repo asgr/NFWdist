@@ -7,4 +7,5 @@ Maintainer: Aaron Robotham <aaron.robotham@uwa.edu.au>
 Description: Density, distribution function, quantile function and random generation for the 3D NFW profile.
 License: GPL-3
 LazyData: true
-Depends: R (>= 3.00), gsl
+Depends: R (>= 3.00)
+Suggests: gsl, lamW

@@ -22,7 +22,7 @@ rnfw(n, con = 5)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x,q}{
-Vector of quantiles. This is scaled such that \option{x}=R/Rvir for NFW. This means the PDF is only defined between 0 and 1.
+Vector of quantiles. This is scaled such that \option{x} and \option{q} are equal to R/Rvir for NFW. This means the PDF is only defined between 0 and 1.
 }
   \item{p}{
 Vector of probabilities.
@@ -39,12 +39,14 @@ Logical; if TRUE, probabilities/densities p are returned as log(p).
 }
 \details{
 The novel part of this package is the general solution for the CDF inversion (i.e. qnfw). As far as I can see this has not been published anywhere, and it is a useful function for populating halos in something like an HOD.
+
+One of \code{lamW} (fastest) or \code{gsl} (easier to install) must be installed to use the \code{qnfw} and \code{rnfw} functions!. Try to install \code{lamW} first (since it is about four times faster), but if that is tricky due to \code{Rcpp} dependencies then use \code{gsl} instead.
 }
 \value{
 dnfw gives the density, pnfw gives the distribution function, qnfw gives the quantile function, and rnfw generates random deviates.
 }
 \references{
-None as of yet!
+Robotham \& Howlett, arXiv, 2018
 }
 \author{
 Aaron Robotham
@@ -56,10 +58,11 @@ This seems to work at least as efficiently as accept reject, but it is ultimatel
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-Nothing to see here!
+\code{lambert_W0} (\code{gsl}) or \code{lambertW0} (\code{lamW}).
 }
 \examples{
 #Both the PDF (dnfw) integrated up to x, and CDF at q should be the same:
+#0.373, 0.562, 0.644, 0.712
 
 for(con in c(1,5,10,20)){
   print(integrate(dnfw, lower=0, upper=0.5, con=con)$value)
