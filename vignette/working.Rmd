@@ -5,7 +5,7 @@ date: "23/05/2018"
 output: html_document
 ---
 
-This is a compact version of the paper [arXiv 1805.09550](https://arxiv.org/abs/1805.09550v1).
+This is a compact version of the paper [arXiv 1805.09550](https://arxiv.org/abs/1805.09550).
 
 First we define the NFW PDF for any input scale radius $q=R/R_{vir}$
 
