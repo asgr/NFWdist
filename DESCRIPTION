@@ -8,4 +8,5 @@ Description: Density, distribution function, quantile function and random genera
 License: GPL-3
 LazyData: true
 Depends: R (>= 3.00)
-Suggests: gsl, lamW
+Suggests: knitr, gsl, lamW
+VignetteBuilder: knitr
