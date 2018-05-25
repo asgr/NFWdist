@@ -61,7 +61,7 @@ This seems to work at least as efficiently as accept reject, but it is ultimatel
 \code{lambert_W0} (\code{gsl}) or \code{lambertW0} (\code{lamW}).
 }
 \examples{
-#Both the PDF (dnfw) integrated up to x, and CDF at q should be the same:
+#Both the PDF (dnfw) integrated up to x, and CDF at q (pnfw) should be the same:
 #0.373, 0.562, 0.644, 0.712
 
 for(con in c(1,5,10,20)){
