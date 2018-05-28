@@ -46,7 +46,7 @@ One of \code{lamW} (fastest) or \code{gsl} (easier to install) must be installed
 dnfw gives the density, pnfw gives the distribution function, qnfw gives the quantile function, and rnfw generates random deviates.
 }
 \references{
-Robotham & Howlett, 2018, arXiv 1805.09550
+Robotham & Howlett, 2018, arXiv, 1805.09550
 }
 \author{
 Aaron Robotham
